@@ -20,3 +20,176 @@
 .App-link {
   color: #09d3ac;
 }
+
+.page-bg{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #C70039;
+}
+
+.list-bg{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #C70039;
+}
+
+.list-row{
+  width: 60%;
+}
+
+table{
+  background-color:  #E5E8E8;
+  width: 100%;
+}
+
+
+thead{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+thead td, tbody td {
+  padding: 0.5rem;
+  border-bottom: 0.2rem solid #ffffff;
+}
+
+.cell{
+  border-left: 0.2rem solid #ffffff;
+}
+
+tr{
+  border-bottom: 1px solid #D5D3D3;
+}
+
+.action-btn{
+  background-color: #0B7618;
+  color: #ffffff;
+  border-radius: .3rem;
+  padding: .5rem;
+  box-shadow: none;
+  border: none;
+}
+
+.delete-btn{
+  background-color: #EC0D0D;
+  color: #ffffff;
+  border-radius: .3rem;
+  padding: .5rem;
+  box-shadow: none;
+  border: none;
+  margin-left: 1rem;
+}
+
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  padding: 1rem 2rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+
+.field{
+  border-radius: .5rem;
+  box-shadow: none;
+  width: 20rem;
+  padding: .5rem;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  border: .1rem solid #E5E5E5;
+  outline: none;
+}
+
+.title{
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.btn{
+  padding: 1rem;
+  border: none;
+  background-color: #C70039;
+  color: #ffffff;
+  border-radius: .5rem;
+  align-self: center;
+  margin-top: 1.0rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-con{
+  text-align: center;
+}
+
+.list-box{
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 50%;
+  padding: 1rem 3rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  margin-top: 5rem;
+}
+
+.table-con{
+  overflow-y: scroll;
+  height: 80%;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.add-btn-con{
+  text-align: right;
+}
+
+
+.modal{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  padding: 1rem 2rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+
+.modal-con{
+  position: fixed;
+  top: 12rem;
+}
+
+.head-con{
+  display: flex;
+}
+
+.close-btn{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.auth-btn-con{
+    display: flex;
+    align-items: baseline;
+}
+
+.auth-btn-con span {
+  padding-right: 2.2rem;
+}
+
+.hob-cell{
+  text-transform: capitalize;
+}
