@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { signin as signinAction } from '../../store/actions/auth';
@@ -55,7 +56,7 @@ const SignIn = (props) => {
                         onChange={handleChange}
                     />
                     <div className='auth-btn-con'>
-                        <span>Don't have an account? <a href='/'>SIgn Up</a></span>
+                        <span>Don't have an account? <Link to='/'>SIgn Up</Link></span>
                         <Button 
                             type='submit'
                             value='Login'
