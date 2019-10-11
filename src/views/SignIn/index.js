@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { signin as signinAction } from '../../store/actions/auth';
 
 const SignIn = (props) => {
-    const { isCompleted, error, history} = props;
+    const { isAuthenticated, error, history} = props;
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -23,15 +23,19 @@ const SignIn = (props) => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         await props.signinAction(values);
-        if(isCompleted){
-            console.log(history);
+    }
+
+    useEffect(() => {
+        if(isAuthenticated){
             history.push('/hobby');
         }
-    }
+    }, [isAuthenticated]);
+
     return (
         <div className='page-bg'>
             <div className='card'>
                 <h2 className='title'>Sign In</h2>
+                <p class={error}>{error}</p>
                 <form onSubmit={handleSubmit}>
                     <Input 
                         type='email'
@@ -64,7 +68,7 @@ const SignIn = (props) => {
 }
 
 const mapStateToProps = state => ({
-    isCompleted: state.auth.isCompleted,
+    isAuthenticated: state.auth.isAuthenticated,
     isLoading: state.auth.isLoading,
     error: state.auth.error
 });

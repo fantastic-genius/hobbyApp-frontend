@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import { signup as signupAction } from '../../store/actions/auth';
 
 const SignUp = (props) => {
-    const { isLoading, isCompleted} = props;
+    const { isAuthenticated, error, history} = props;
     const [values, setValues] = useState({
         first_name: '',
         last_name: '',
@@ -23,14 +23,22 @@ const SignUp = (props) => {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-    props.signupAction(values);
-    }
+        props.signupAction(values);
+    };
+
+    useEffect(() => {
+        if(isAuthenticated){
+            history.push('/hobby');
+        }
+    }, [isAuthenticated]);
+
     return (
         <div className='page-bg'>
             <div className='card'>
                 <h2 className='title'>Sign Up</h2>
+                <p class='error'>{error}</p>
                 <form onSubmit={handleSubmit}>
                     <Input 
                         type='text'
@@ -90,8 +98,8 @@ const SignUp = (props) => {
 }
 
 const mapStateToProps = state => ({
-    isCompleted: state.auth.isCompleted,
-    isLoading: state.auth.isLoading
+    isAuthenticated: state.auth.isAuthenticated,
+    error: state.auth.error
 });
 
 export default connect(mapStateToProps, {signupAction})(SignUp);

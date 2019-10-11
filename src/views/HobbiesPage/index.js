@@ -76,7 +76,6 @@ const HobbiesPage = (props) => {
             ...prevValues,
             [e.target.name]:e.target.value
         }));
-        console.log(values);
     }
 
     const handleSave = async (e) => {
@@ -88,7 +87,6 @@ const HobbiesPage = (props) => {
                 props.getUserHobbies();
             }
         }else{
-            console.log(values)
             await props.createHobby(values);
             if(!isCreating){
                 setToggle(false);

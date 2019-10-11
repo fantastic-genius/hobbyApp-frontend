@@ -193,3 +193,8 @@ tr{
 .hob-cell{
   text-transform: capitalize;
 }
+
+.error{
+  background-color: #EC0D0D;
+  color: #ffffff;
+}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { HashRouter as Router, Route, withRouter } from 'react-router-dom';
 import SignUp from './views/SignUp';
 import SignIn from './views/SignIn';
 import HobbiesPage from './views/HobbiesPage';
@@ -8,13 +8,23 @@ import { Provider } from 'react-redux';
 import store from './store'
 
 const App = () => (
-  <Provider store={store}>
-    <Router>
+  <Fragment>
       <Route exact path='/' component={SignUp} />
       <Route path='/login' component={SignIn} />
       <Route path='/hobby' component={HobbiesPage} />
-    </Router>
-  </Provider>
-)
+  </Fragment>
+);
 
-export default App;
+const AppWithRouter = withRouter(App)
+
+const Routes = () => {
+  return (
+    <Provider store={store}>
+      <Router>
+        <AppWithRouter />
+      </Router>
+    </Provider>
+  )
+};
+
+export default Routes;
